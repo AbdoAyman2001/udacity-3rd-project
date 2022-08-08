@@ -13,7 +13,7 @@
     "prod": "npx tsc && node ./www/server.js",
     "clean": "rm -rf www/ || true",
     "deploy": "npm run build && eb list && eb use udagram-api-dev && eb deploy",
-    "build": "npm run clean && npm i typescript@3.9.10 && npm run tsc"
+    "build":"npm run clean && npm i typescript@3.9.10 && npm run tsc"
   },
   "keywords": [],
   "author": "Gabriel Ruttner",
