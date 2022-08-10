@@ -40,7 +40,7 @@ jobs:
   test:
     docker:
       # the base image can run most needed actions with orbs
-      - image: cimg/node:16.13.1-browsers
+      - image: cimg/node:16.13.0-browsers
     steps:
       # install node and checkout code
       - browser-tools/install-chrome
