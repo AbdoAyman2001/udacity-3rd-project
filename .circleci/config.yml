@@ -46,7 +46,7 @@ jobs:
       # - browser-tools/install-chrome
       - browser-tools/install-browser-tools:
           - chrome-version: 100.0.4896
-          - install-chromedriver
+          # - install-chromedriver
       - browser-tools/install-chromedriver
       - checkout
       - run:
