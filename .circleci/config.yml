@@ -35,7 +35,7 @@ jobs:
       - run:
           name: API Build
           command: |
-            npm run api:build
+            npm run api:build  
   test:
     docker:
       # the base image can run most needed actions with orbs
@@ -47,10 +47,9 @@ jobs:
       - checkout
       # Use root level package.json to install dependencies in the frontend app
       - run:
-        name: Testing Front-End
-        command: |
-          npm run frontend:test
-  
+          name: Testing Front-End
+          command: |
+            npm run frontend:test
   deploy:
     docker:
       - image: "cimg/base:stable"
@@ -66,13 +65,13 @@ jobs:
           command: |
             npm run frontend:deploy
             npm run api:deploy
-# workflows:
-#   udagram:
-#     jobs:
-#       - build
-#       - test:
-#           requires:
-#             - build
-#       - deploy:
-#           requires:
-#             - test
+workflows:
+  udagram:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
+      - deploy:
+          requires:
+            - test
