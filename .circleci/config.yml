@@ -40,14 +40,17 @@ jobs:
   test:
     docker:
       # the base image can run most needed actions with orbs
-      - image: "cimg/node:14.15"
       - image: cimg/node:16.13.1-browsers
-
     steps:
       # install node and checkout code
-      - node/install:
-          node-version: '14.15'         
+      - browser-tools/install-chrome
+      - browser-tools/install-chromedriver
       - checkout
+      - run:
+          command: |
+            google-chrome --version
+            chromedriver --version
+          name: Check install
       # Use root level package.json to install dependencies in the frontend app
       - run:
           name: Testing Front-End
