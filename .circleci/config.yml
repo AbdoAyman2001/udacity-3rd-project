@@ -66,13 +66,13 @@ jobs:
           command: |
             npm run frontend:deploy
             npm run api:deploy
-workflows:
-  udagram:
-    jobs:
-      - build
-      - test:
-          requires:
-            - build
-      - deploy:
-          requires:
-            - test
+# workflows:
+#   udagram:
+#     jobs:
+#       - build
+#       - test:
+#           requires:
+#             - build
+#       - deploy:
+#           requires:
+#             - test
