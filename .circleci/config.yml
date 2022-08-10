@@ -36,7 +36,6 @@ jobs:
           name: API Build
           command: |
             npm run api:build
-
   Test:
     docker:
       # the base image can run most needed actions with orbs
@@ -70,10 +69,10 @@ jobs:
 workflows:
   udagram:
     jobs:
-      - build
-      - test:
+      - Build
+      - Test:
           requires:
-            - build
-      - deploy:
+            - Build
+      - Deploy:
           requires:
-            - test
+            - Test
