@@ -43,8 +43,7 @@ jobs:
       - image: cimg/node:16.13.0-browsers
     steps:
       # install node and checkout code
-      - browser-tools/install-chrome:
-          version: '100'
+      - browser-tools/install-chrome@100
       - browser-tools/install-chromedriver
       - checkout
       - run:
