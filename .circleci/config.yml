@@ -80,7 +80,7 @@ jobs:
       - run:
           name: setup elastic beanstalk secrets
           command: |
-            eb init udagram-api --platform node.js --region $AWS_REGION 
+            eb init udagram-api --platform node.js --region us-east-1 
             eb setenv AWS_BUCKET=$AWS_BUCKET
             eb setenv AWS_PROFILE=$AWS_PROFILE
             eb setenv AWS_REGION=$AWS_REGION
