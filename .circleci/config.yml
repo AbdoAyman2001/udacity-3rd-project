@@ -59,13 +59,11 @@ jobs:
           command: |
             npm run frontend:test 
 
-############################   RUNNING E2E TESTING GIVE ERRORS DUE TO WRONG TESTING CODE #################
+      ############################   RUNNING E2E TESTING GIVE ERRORS DUE TO WRONG TESTING CODE #################
       # - run:
       #     name: Testing Front-End e2e
       #     command: |
       #       npm run frontend:e2e
-
-
 
   deploy:
     docker:
@@ -97,6 +95,7 @@ jobs:
           command: |
             npm run frontend:deploy
             npm run api:deploy
+
 workflows:
   udagram:
     jobs:
