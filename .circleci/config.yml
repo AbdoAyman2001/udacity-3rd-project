@@ -73,7 +73,7 @@ jobs:
       # more setup needed for aws, node, elastic beanstalk
     steps:
       - node/install:
-          node-version: '14.15' 
+          node-version: '14.15'         
       - eb/setup
       - aws-cli/setup
       - checkout
@@ -81,6 +81,7 @@ jobs:
           name: setup elastic beanstalk secrets
           command: |
             npm run api:build 
+            cd udagram/udagram-api/
             eb init udagram-api --platform node.js --region us-east-1 
 #            eb setenv AWS_BUCKET=$AWS_BUCKET
 #            eb setenv AWS_PROFILE=$AWS_PROFILE
